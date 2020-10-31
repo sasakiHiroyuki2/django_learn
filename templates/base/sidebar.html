@@ -1,0 +1,20 @@
+{% load threadtags %}
+<div class="five wide column">
+    <form action="{% url 'search:result' %}" method="GET">
+        <div class="ui action input" style="width: 100%;">
+            <input type="text" placeholder="検索" name="q">
+            <button type="submit" class="ui button"><i class="search icon"></i></button>
+        </div>
+    </form> 
+    <div class="ui items">
+        <div class="item">
+            <a href="{% url 'thread:create_topic' %}" class="ui fluid teal button">トピックを作成</a>
+        </div>
+    </div>
+    <div class="ui segment">
+        <div class="content">
+            <div class="header"><h4>カテゴリー</h4></div>
+            {% categorytag %}
+        </div>
+    </div>
+</div>
